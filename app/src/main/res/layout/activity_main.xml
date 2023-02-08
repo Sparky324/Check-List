@@ -8,11 +8,64 @@
     tools:context=".MainActivity"
     android:layout_margin="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/scan"
+            android:layout_width="69dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="onCameraClick"
+            app:srcCompat="@drawable/camera"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onAddClick"
+            android:text="Добавить продукт"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="551dp">
+        android:layout_height="578dp">
 
     </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="295dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="onEditClick"
+            android:text="Редактировать" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="onShareClick"
+            app:backgroundTint="#9C6EEF"
+            app:srcCompat="@drawable/share"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
 
 </LinearLayout>
