@@ -91,11 +91,11 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
         }
     }
 
-//    public void onEditClick(View view) {
-//        Intent editClickIntent = new Intent(MainActivity.this, EditActivity.class);
-//        editClickIntent.putExtra("items", (Serializable) items_s);
-//        startActivity(editClickIntent);
-//    }
+    public void onEditClick(View view) {
+        Intent editClickIntent = new Intent(MainActivity.this, EditActivity.class);
+        editClickIntent.putExtra("items", (Serializable) items_s);
+        startActivity(editClickIntent);
+    }
 
     public void onShareClick(View view) {
         Intent intent = new Intent(Intent.ACTION_SEND);
