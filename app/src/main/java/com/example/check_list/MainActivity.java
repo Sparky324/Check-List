@@ -77,10 +77,10 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
         this.items_s = new ArrayList<>(set);
     }
 
-//    public void onAddClick(View view) {
-//        Intent intent = new Intent(MainActivity.this, AddingActivity.class);
-//        startActivity(intent);
-//    }
+   public void onAddClick(View view) {
+        Intent intent = new Intent(MainActivity.this, AddingActivity.class);
+        startActivity(intent);
+    }
 
     public void onCameraClick(View view) {
         Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
