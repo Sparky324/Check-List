@@ -11,10 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.EditText;
 
-import com.example.check_list.MyRecyclerViewAdapter;
-import com.example.check_list.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,9 +21,7 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener{
     private List<String> items_s = new ArrayList<>();
-    public Context context;
     MyRecyclerViewAdapter adapter;
-    //private final RecyclerView.Adapter adapter = new ItemAdapter(this.items);
     private static final int REQUEST_TAKE_PHOTO = 1;
     SharedPreferences sharedPreferences;
 

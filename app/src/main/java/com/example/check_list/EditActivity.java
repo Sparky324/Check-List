@@ -18,7 +18,6 @@ import java.util.Set;
 
 public class EditActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
-    MyRecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +71,7 @@ public class EditActivity extends AppCompatActivity {
         ArrayList<String> items_s = new ArrayList<>(set);
 
         String el = spinner.getSelectedItem().toString();
-        int idx = items_s.indexOf(el);
-        items_s.remove(idx);
+        items_s.remove(el);
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Set<String> set1 = new HashSet<>(items_s);
