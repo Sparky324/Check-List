@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddingActivity">
+    tools:context="ru.samsung.case2022.AddingActivity">
 
     <EditText
         android:id="@+id/editProductName"

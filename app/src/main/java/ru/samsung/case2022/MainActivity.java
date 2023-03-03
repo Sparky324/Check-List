@@ -1,4 +1,4 @@
-package com.example.check_list;
+package ru.samsung.case2022;
 
 
 import android.content.ActivityNotFoundException;
@@ -11,7 +11,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
+
+import com.example.check_list.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.setAdapter(adapter);
+
+        adapter.setClickListener(this);
 
         sharedPreferences = getSharedPreferences("mypref", Context.MODE_PRIVATE);
         Set<String> set = sharedPreferences.getStringSet("items_s", new HashSet<>());
@@ -72,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
         this.items_s = new ArrayList<>(set);
     }
 
-   public void onAddClick(View view) {
+    public void onAddClick(View view) {
         Intent intent = new Intent(MainActivity.this, AddingActivity.class);
         startActivity(intent);
     }
@@ -108,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
     }
 
     @Override
-    public void onItemClick(View view, int position) {}
-
-    public void onProdClick(View view) {}
+    public void onItemClick(View view, int position) {
+        Toast.makeText(this, "Скоро будет", Toast.LENGTH_SHORT).show();
+    }
 }

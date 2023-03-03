@@ -1,6 +1,7 @@
-package com.example.check_list;
+package ru.samsung.case2022;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,13 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.check_list.R;
+
 import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private final List<String> mData;
     private final LayoutInflater mInflater;
-    Context mContext;
+    private ItemClickListener mClickListener;
+    private Context mContext;
 
     public MyRecyclerViewAdapter(Context context, List<String> data) {
         this.mInflater = LayoutInflater.from(context);
@@ -23,7 +27,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     @Override
-    public MyRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.items, parent, false);
         return new ViewHolder(view);
     }
@@ -41,24 +45,30 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView;
 
         ViewHolder(View itemView) {
             super(itemView);
             myTextView = itemView.findViewById(R.id.productName);
             itemView.setOnClickListener(this);
-
-            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
+            final Intent intent = new Intent(mContext, EditActivity.class);
+            intent.putExtra("pos", getAdapterPosition());
+            mContext.startActivity(intent);
         }
+    }
+
+    String getItem(int id) {return mData.get(id);}
+
+    void setClickListener (ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
     }
 
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
-
 }

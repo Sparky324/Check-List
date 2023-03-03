@@ -1,4 +1,4 @@
-package com.example.check_list;
+package ru.samsung.case2022;
 
 
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.check_list.R;
 
 import java.util.ArrayList;
 import java.util.HashSet;
