@@ -13,13 +13,16 @@
         android:theme="@style/Theme.CheckList"
         tools:targetApi="31">
         <activity
-            android:name="ru.samsung.case2022.EditActivity"
+            android:name="ru.samsung.case2022.main.EditActivity"
             android:exported="false" />
         <activity
-            android:name="ru.samsung.case2022.AddingActivity"
+            android:name="ru.samsung.case2022.main.PreviewActivity"
             android:exported="false" />
         <activity
-            android:name="ru.samsung.case2022.MainActivity"
+            android:name="ru.samsung.case2022.main.AddingActivity"
+            android:exported="false" />
+        <activity
+            android:name="ru.samsung.case2022.RootActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
